@@ -1,3 +1,18 @@
 body {
-    background-color: skyblue;
+    background-color: rgb(96, 161, 187);
+    font-family: Arial, Helvetica, sans-serif;
+    color: brown;
+}
+h1 {
+    color: #206222;
+    text-align: center;
+    margin-bottom: 20px;
+}
+a {
+    color: #206222;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
