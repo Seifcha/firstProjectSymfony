@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% set total_books = 0 %}
+{% if authors is empty%}
+    <h1> tableau vide, merci !!!! </h1>
+   {% elseif authors is not defined %}
+        <h1> tableau non definie , merci !!!! </h1>
+{% else %}
+
+
+    {% for author in authors %}
+                {% set total_books = total_books + author.nbBooks %}
+
+    <ul>
+         <li>
+            <img src="{{ author.image }}" alt="{{ author.userName }}" width="100">
+            <p><strong>{{ author.userName | upper }} </strong></p>
+<a href="{{ path('app_Details', { id: author.id }) }}">details</a>
+        <p>Email: {{ author.email }}</p>
+            <p>Number of books: {{ author.nbBooks }}</p>
+        </li>
+    </ul>
+    {% endfor %}
+    {% endif %}
+
+<h1>Le nombre total de livres est : {{ total_books }}</h1>
+{% endblock %}

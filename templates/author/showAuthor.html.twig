@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <ul>
+         <li>
+            <img src="{{ author.image }}" alt="{{ author.username }}" width="100">
+            <p><strong>{{ author.userName | upper }} </strong></p>
+          
+        <p>Email: {{ author.email }}</p>
+            <p>Number of books: {{ author.nbBooks }}</p>
+        </li>
+    </ul>
+{% endblock %}
